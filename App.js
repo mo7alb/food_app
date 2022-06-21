@@ -1,8 +1,8 @@
 import { StyleSheet, SafeAreaView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Restaurants from "./components/Restaurants";
-import Menu from "./components/Menu";
+import Restaurants from "./screens/Restaurants";
+import Menu from "./screens/Menu";
 
 const Stack = createNativeStackNavigator();
 
