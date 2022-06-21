@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import { View, Image, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Cell } from "react-native-tableview-simple";
 
@@ -38,7 +40,11 @@ const styles = StyleSheet.create({
    },
 });
 
-export default function MenuCustomCell({ title, img, add, remove }) {
+export default function MenuCustomCell({ id, title, img }) {
+   const { add, remove } = useContext(CartContext);
+
+   // const imageSource = require(img);
+
    return (
       <Cell
          cellContentView={
@@ -46,15 +52,12 @@ export default function MenuCustomCell({ title, img, add, remove }) {
                <Image source={img} style={styles.cellImg} />
                <Text style={styles.title}>{title}</Text>
                <View style={styles.btnContainer}>
-                  <TouchableOpacity
-                     style={styles.btn}
-                     onPress={() => add(title)}
-                  >
+                  <TouchableOpacity style={styles.btn} onPress={() => add(id)}>
                      <Text style={styles.btnText}>+</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                      style={styles.btn}
-                     onPress={() => remove(title)}
+                     onPress={() => remove(id)}
                   >
                      <Text style={styles.btnText}>-</Text>
                   </TouchableOpacity>

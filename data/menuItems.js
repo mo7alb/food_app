@@ -3,20 +3,34 @@ export const menuItems = {
       {
          title: "Gelato",
          contents: [
-            { title: "Vanilla", imguri: require("../assets/desserts.jpeg") },
             {
+               id: 1,
+               title: "Vanilla",
+               imguri: require("../assets/desserts.jpeg"),
+            },
+            {
+               id: 2,
                title: "Chocolate",
                imguri: require("../assets/desserts.jpeg"),
             },
-            { title: "Mint", imguri: require("../assets/desserts.jpeg") },
+            {
+               id: 3,
+               title: "Mint",
+               imguri: require("../assets/desserts.jpeg"),
+            },
          ],
       },
       {
          title: "Coffee",
          contents: [
-            { title: "Flat White", imguri: require("../assets/coffee.jpeg") },
-            { title: "Latte", imguri: require("../assets/coffee.jpeg") },
             {
+               id: 4,
+               title: "Flat White",
+               imguri: require("../assets/coffee.jpeg"),
+            },
+            { id: 5, title: "Latte", imguri: require("../assets/coffee.jpeg") },
+            {
+               id: 6,
                title: "Caffe Americano",
                imguri: require("../assets/coffee.jpeg"),
             },
@@ -25,17 +39,29 @@ export const menuItems = {
       {
          title: "Burger",
          contents: [
-            { title: "Beef", imguri: require("../assets/burger.jpeg") },
-            { title: "Turkey", imguri: require("../assets/burger.jpeg") },
-            { title: "Cheese", imguri: require("../assets/burger.jpeg") },
+            { id: 7, title: "Beef", imguri: require("../assets/burger.jpeg") },
+            {
+               id: 8,
+               title: "Turkey",
+               imguri: require("../assets/burger.jpeg"),
+            },
+            {
+               id: 9,
+               title: "Cheese",
+               imguri: require("../assets/burger.jpeg"),
+            },
          ],
       },
       {
          title: "Pizza",
          contents: [
-            { title: "Ranch", imguri: require("../assets/pizza.jpeg") },
-            { title: "Shawarma", imguri: require("../assets/pizza.jpeg") },
-            { title: "BBQ", imguri: require("../assets/pizza.jpeg") },
+            { id: 10, title: "Ranch", imguri: require("../assets/pizza.jpeg") },
+            {
+               id: 11,
+               title: "Shawarma",
+               imguri: require("../assets/pizza.jpeg"),
+            },
+            { id: 12, title: "BBQ", imguri: require("../assets/pizza.jpeg") },
          ],
       },
    ],
