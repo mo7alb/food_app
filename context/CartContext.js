@@ -48,26 +48,30 @@ export default function CartProvider({ children }) {
    // function to remove an item from the cart
    const remove = (id, complete = false) => {
       setCart(prev => {
-         // return an object as the new state
-         // object contains a count that is one less than the previos
-         // object filters the previous list of items and adds
-         // all the items except the one with the id passed through it
-         // for the id passed through the function it creates a new object
-         // this object has a count of 0 if it was not defined before
-         // otherwise it gets the previous size and subtracts one
+         // get object with the same id as passed
+         const previousItem = prev.items.find(item => item.id == id);
+
+         // if it is undefined do nothing and return the previous state
+         if (previousItem == undefined) {
+            return prev;
+         }
+
+         // the previous item is defined
          return {
-            count: prev.count > 0 ? prev.count - 1 : 0,
+            count:
+               prev.count > 0
+                  ? complete == true
+                     ? prev.count - previousItem.count
+                     : prev.count - 1
+                  : 0,
             items: [
                ...prev.items.filter(item => item.id !== id),
                {
                   id,
                   count:
-                     prev.items.find(item => item.id == id) == undefined
-                        ? 0
-                        : complete == true
-                        ? prev.items.find(item => item.id == id).count -
-                          prev.items.find(item => item.id == id).count
-                        : prev.items.find(item => item.id == id).count - 1,
+                     complete == true
+                        ? previousItem.count - previousItem.count
+                        : previousItem.count - 1,
                },
             ],
          };
