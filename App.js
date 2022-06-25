@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView } from "react-native";
+// import libraries and components
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Restaurants from "./screens/Restaurants";
@@ -6,8 +6,13 @@ import Menu from "./screens/Menu";
 import Cart from "./screens/Cart";
 import CartProvider from "./context/CartContext";
 
+// create a navigator
 const Stack = createNativeStackNavigator();
 
+/**
+ * Entry point component that handles navigation
+ * @returns React Component
+ */
 export default function App() {
    return (
       <CartProvider>

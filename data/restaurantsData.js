@@ -1,3 +1,4 @@
+// restaurant related data
 export const restaurantsData = {
    items: [
       {

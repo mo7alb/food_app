@@ -1,3 +1,4 @@
+// list of menu items containing food and drinks
 export const menuItems = {
    items: [
       {

@@ -51,16 +51,20 @@ export default function RestaurantCustomCell(props) {
          onPress={props.action}
          cellContentView={
             <View style={[{ height: props.height }, styles.mainContainer]}>
+               {/* restaurant image */}
                <Image
                   source={props.imgUri}
                   resizeMode="cover"
                   style={[styles.headerImg, { height: props.height * 0.75 }]}
                />
+               {/* restaurant eta timing */}
                <View style={styles.eta}>
                   <Text style={styles.etaText}>{props.eta}</Text>
                   <Text style={styles.etaText}>mins</Text>
                </View>
+               {/* restaurant name */}
                <Text style={styles.title}>{props.title}</Text>
+               {/* restaurant subtitle represent what the restaurant servers */}
                <Text style={styles.subtitle}>{props.tagline}</Text>
             </View>
          }
